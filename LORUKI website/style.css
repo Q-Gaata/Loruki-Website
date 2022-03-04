@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: gray;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+
+}
+
+ul {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+h1, h2 {
+    line-height: 1.2;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+p { margin: 10px 0; }
+
+img {
+    width: 100%;
+}
+
+/**Navbar**/
+.navbar {
+    background: var(--primary-color);
+    color: white;
+    height: 70px;
+    
+}
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+    
+}
+.navbar a {
+    padding: 10px;
+    margin: 0 5px;
+    color: white;
+
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid white;
+    transition: 0.5s;
+}
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
+/**Showcase**/
+.showcase {
+    background: var(--primary-color);
+    color: white;
+    height: 400px;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+.showcase p {
+    margin: 20px 0;
+}
+.showcase .grid {
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+    overflow: visible;
+}
+.showcase-text {
+    animation: SlideInFromTheLeft 1s ease-in;
+}
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    justify-self: flex-end;
+    padding: 40px;
+    z-index: 100;
+    animation: SlideInFromTheRight 1s ease-in;
+}
+.showcase .form-control {
+    margin: 30px 0;
+}
+.showcase-form input[type= 'text'], .showcase-form input[type= 'email'] {
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    padding: 3px;
+    outline: none;
+}
+
+.showcase::after,.showcase::before {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    background: white;
+    left: 0;
+    right: 0;
+    height: 100px;
+    -moz-transform: skewY(-2deg);
+    
+}
+.stats {
+    animation: SlideInFromTheTop 1s ease-in;
+}
+.stats .container {
+    margin-top: 100px;
+}
+.stats-heading {
+    
+    margin: auto;
+    animation: SlideInFromTheTop 1s ease-in;
+}
+.stats .grid h3 {
+    font-size: 30px;
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+/**CLI*/
+.cli {
+    animation: SlideInFromTheBottom 1s ease-in;
+}
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+   
+}
+
+.cli .grid > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/**Cloud**/
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+/**Languages**/
+.languages .card:hover {
+    cursor: pointer;
+    transform: translateY(-20px);
+    
+    transition: 0.5s;
+}
+.languages .my-2 {
+    margin-bottom: 40px;
+}
+.languages .flex {
+    flex-wrap: wrap;
+}
+.languages .card {
+    margin: 10px 10px 40px;
+}
+
+/**Footer**/
+.footer .social a {
+    margin: 0 10px;
+}
+.footer .social a:hover {
+    transform: translateY(-20px);
+}
+
+.features-head {
+    overflow: auto;
+}
+
+.abe {
+    height: 150px;
+}
+.features-head img, .features-sub-head img, .docs-head img {
+    width: 300px;
+    justify-self: flex-end;
+    margin: 30px 0;
+}
+.features-main .card i {
+    margin-right: 20px;
+}
+.features-main .card {
+    padding: 10px;
+}
+
+.features-main .grid > *:first-child {
+    grid-column: 1 / span 3;
+}
+.features-main .grid > *:nth-child(2) {
+    grid-column: 1 / span 2;
+}
+.features-main .grid {
+    padding: 30px;
+}
+/**Docs main**/
+.docs-main h3 {
+    margin: 20px 0;
+}
+.docs-main .grid{
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+
+.docs-main li {
+    font-size: 17px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+.docs-main a:hover {
+    font-weight: bold;
+}
+.docs-main nav ul li a {
+    color: black;
+}
+pre {
+    background: black;
+    color: white;
+    padding: 5px;
+}
+
+/**Animation**/
+@keyframes SlideInFromTheLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes SlideInFromTheRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes SlideInFromTheTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes SlideInFromTheBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/**Tablets and under**/
+@media (max-width: 768px){
+    .grid,
+    .grid-3,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid, .features-head .grid, .features-sub-head .grid, .features-main .grid, .docs-main .grid, .docs-head .grid {
+        grid-template-columns: 1fr;
+    }
+    .showcase-text {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .showcase {
+        height: auto;
+    }
+    .showcase-form {
+        margin: auto;
+        justify-self: center;
+        
+    }
+    .cli .grid > *:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .features-head .grid, .docs-head .grid, .features-sub-head {
+        text-align: center;
+    }
+    .features-head .grid img, .docs-head .grid img, .features-sub-head img {
+        justify-self: center;
+    }
+    .features-main .grid-3 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+    }
+    .features-main .grid > *:first-child, .features-main .grid > *:nth-child(2) {
+        grid-column: 1;
+    }
+   
+    }
+
+/**Mobile and under**/
+@media (max-width: 500px){
+    .navbar {
+        height: 110px;
+    }
+    .navbar .flex {
+        flex-direction: column;
+    }
+    .navbar ul {
+        background: rgba(0, 0, 0, 0.2);
+
+    }
+    .navbar .container h1 {
+        padding-bottom: 1px;
+    }
+    .showcase-form {
+        width: 300px;
+    }
+    .grid,
+    .grid-3,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid {
+        grid-template-columns: 1fr;
+    }
+}
